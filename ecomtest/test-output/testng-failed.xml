@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="com.ecomtest.qa.listners.MyListener"/>
+  </listeners>
+  <test name="Test">
+    <classes>
+      <class name="com.ecomtest.qa.base.BaseTest"/>
+      <class name="com.ecomtest.qa.scripts.LoginTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Test(failed)">
+    <classes>
+      <class name="com.ecomtest.qa.scripts.LoginTest">
+        <methods>
+          <include name="initialization"/>
+          <include name="tearDown"/>
+          <include name="loginTest1"/>
+        </methods>
+      </class> <!-- com.ecomtest.qa.scripts.LoginTest -->
+      <class name="com.ecomtest.qa.base.BaseTest">
+        <methods>
+          <include name="loadProperties"/>
+        </methods>
+      </class> <!-- com.ecomtest.qa.base.BaseTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
